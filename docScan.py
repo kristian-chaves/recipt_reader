@@ -1,4 +1,4 @@
-from other_file import four_point_transform
+from perspective_transform import four_point_transform
 from skimage.filters import threshold_local
 
 import numpy as np
