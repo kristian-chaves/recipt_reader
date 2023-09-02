@@ -43,8 +43,7 @@ def four_point_transform(image, pts):
         [0,0],
         [maxWidth-1, 0],
         [maxWidth-1, maxHeight-1],
-        [0, maxHeight-1]], dtype = "float32"
-    )
+        [0, maxHeight-1]], dtype = "float32")
 
     #compute perspective transform matrix -> apply it
     M = cv2.getPerspectiveTransform(rect, dst)

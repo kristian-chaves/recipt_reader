@@ -17,7 +17,7 @@ print("hello world")
     # resize makes detection faster + more accurate
 image = cv2.imread(img)
 ratio = image.shape[0] / 500.0
-orig = image.copy
+orig = image.copy()
 image = imutils.resize(image, height=500)
 
 #convert image grey scale, blur -> find edges
