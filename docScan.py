@@ -7,6 +7,8 @@ import numpy as np
 #import argparse
 import cv2
 import imutils
+from datetime import datetime
+import os
 
 img = easygui.fileopenbox()
 #filename = askopenfilename()
@@ -63,6 +65,14 @@ warped = (warped > T).astype("uint8") * 255
 print("step 3: apply perspective transform")
 cv2.imshow("original", imutils.resize(orig, height = 650))
 cv2.imshow("scanned", imutils.resize(warped, height = 650))
+img = imutils.resize(warped, height = 650)
 cv2.waitKey(0)
 
+current_time = datetime.now()  
+filename = current_time.strftime("%Y_%m_%d_%H_%M_%S.png")
+
+path = str(os.getcwd())
+path = path + "\images"
+os.chdir(path)
+cv2.imwrite(filename, img)
 
