@@ -13,7 +13,7 @@ def order_points(pts):
     # 1:top-left, 2:top-right, 3:bottom-right, 4:bottom-left
     rect = np.zeros((4,2), dtype = "float32")
 
-    # top-left smallest sum, top-right, largest sum
+    # top-left smallest sum, bottom-right, largest sum
     s = pts.sum(axis = 1)
     rect[0] = pts[np.argmin(s)]
     rect[2] = pts[np.argmax(s)]

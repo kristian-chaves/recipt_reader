@@ -1,6 +1,19 @@
-from datetime import datetime
-  
-current_time = datetime.now()  
-str_date = current_time.strftime("%Y_%m_%d_%H_%M_%S")
+from PIL import Image
+from pytesseract import pytesseract
+import easygui
 
-print(str_date)
+
+path_to_tesseract = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
+img_o = easygui.fileopenbox()
+
+
+pytesseract.tesseract_cmd = path_to_tesseract
+
+img = Image.open(img_o)
+
+text = pytesseract.image_to_string(img)
+print(text)
+
+
+
