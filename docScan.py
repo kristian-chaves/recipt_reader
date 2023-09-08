@@ -1,10 +1,8 @@
 from perspective_transform import four_point_transform
 from skimage.filters import threshold_local
-#from tkinter.filedialog import askopenfilename
 import easygui
 
 import numpy as np
-#import argparse
 import cv2
 import imutils
 from datetime import datetime
@@ -12,7 +10,7 @@ import os
 
 def docScan_Walkthrough():
     img = easygui.fileopenbox()
-    
+
     #load image, generate ratio of old:new heights, resize og image
         # resize makes detection faster + more accurate
     image = cv2.imread(img)
