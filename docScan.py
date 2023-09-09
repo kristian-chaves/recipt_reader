@@ -113,3 +113,4 @@ def docScan_Auto(img, filename):
     path = path + "\images"
     os.chdir(path)
     cv2.imwrite(filename, img)
+    return path

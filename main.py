@@ -1,5 +1,5 @@
 from docScan import *
-
+from text_processing import *
 
 
 """
@@ -18,5 +18,6 @@ if __name__ == '__main__':
         filename = f"enter filename (no format specifier): "
         filename = filename + ".png"
         img = easygui.fileopenbox()
-        docScan_Auto(img, filename)
+        path = docScan_Auto(img, filename)
+        string = image_to_string_auto(filename, path)
 
